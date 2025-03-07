@@ -13,7 +13,7 @@ RUN echo "flatpak -y install com.nextcloud.desktopclient.nextcloud" >> install.s
 RUN echo "flatpak -y install org.libreoffice.LibreOffice" >> install.sh
 RUN echo "flatpak -y install io.github.seadve.Kooha" >> install.sh
 RUN echo "flatpak -y install info.smplayer.SMPlayer" >> install.sh
-RUN echo "flatpak -y install org.mozilla.firefox" >> install.sh
+RUN echo "flatpak -y install io.gitlab.librewolf-community" >> install.sh
 RUN echo "flatpak -y install us.zoom.Zoom" >> install.sh
 RUN echo "flatpak -y install com.github.d4nj1.tlpui" >> install.sh
 RUN echo "flatpak -y install com.slack.Slack" >> install.sh
