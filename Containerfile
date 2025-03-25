@@ -20,6 +20,7 @@ RUN echo "flatpak -y install com.slack.Slack" >> install.sh
 RUN echo "flatpak -y install mozillavpn.flatpak" >> install.sh
 RUN echo "flatpak -y install im.riot.Riot" >> install.sh
 RUN echo "flatpak -y install com.bitwarden.desktop" >> install.sh
+RUN echo "flatpak -y install org.audacityteam.Audacity" >> install.sh
 RUN echo "sudo rpm-ostree kargs --append-if-missing=quiet" >> install.sh
 RUN echo "sudo cp ./tlp.conf /etc " >> install.sh
 COPY tlp.conf .
