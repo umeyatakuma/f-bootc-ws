@@ -18,3 +18,5 @@ RUN echo "flatpak -y install us.zoom.Zoom" >> install.sh
 RUN echo "flatpak -y install com.github.d4nj1.tlpui" >> install.sh
 RUN echo "flatpak -y install com.slack.Slack" >> install.sh
 RUN echo "sudo rpm-ostree kargs --append-if-missing=quiet" >> install.sh
+RUN echo "sudo cp ./tlp.conf /etc " >> install.sh
+COPY tlp.conf .
