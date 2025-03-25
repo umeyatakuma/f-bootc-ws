@@ -6,6 +6,7 @@ RUN sudo dnf -y install swayidle sway-wallpapers swaybg swaylock sway-systemd sw
 RUN sudo dnf -y install fcitx5 fcitx5-mozc fcitx5-configtool
 RUN sudo dnf -y install light pavucontrol playerctl pulseaudio-utils gammastep 
 RUN sudo dnf -y install virt-viewer
+RUN sudo dnf -y install firefox
 RUN dnf -y install flatpak
 RUN dnf -y clean all
 
