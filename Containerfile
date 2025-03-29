@@ -5,6 +5,7 @@ WORKDIR /app
 RUN sudo dnf -y install swayidle sway-wallpapers swaybg swaylock sway-systemd sway sway-config-upstream i3status
 RUN sudo dnf -y install fcitx5 fcitx5-mozc fcitx5-configtool
 RUN sudo dnf -y install virt-viewer
+RUN sudo dnf -y install distrobox
 RUN sudo dnf -y install firefox
 RUN sudo dnf -y install light pavucontrol playerctl pulseaudio-utils gammastep nextcloud libreoffice smplayer audacity
 RUN dnf -y install flatpak
