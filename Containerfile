@@ -9,6 +9,7 @@ RUN sudo dnf -y install virt-viewer
 RUN sudo dnf -y install distrobox
 RUN sudo dnf -y install firefox
 RUN sudo dnf -y install light pavucontrol playerctl pulseaudio-utils gammastep 
+RUN sudo dnf -y install langpacks-fonts-ja langpacks-fonts-en 
 RUN dnf -y install flatpak
 RUN dnf -y clean all
 
@@ -22,3 +23,4 @@ RUN echo "flatpak -y install im.riot.Riot" >> install.sh
 RUN echo "flatpak -y install com.bitwarden.desktop" >> install.sh
 
 RUN echo "sudo rpm-ostree kargs --append-if-missing=quiet" >> install.sh
+
