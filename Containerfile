@@ -11,7 +11,7 @@ RUN sudo dnf -y install firefox
 RUN sudo dnf -y install light pavucontrol playerctl pulseaudio-utils gammastep 
 RUN sudo dnf -y install langpacks-fonts-ja langpacks-fonts-en 
 RUN sudo dnf -y install krb5-workstation
-RUN sudo dnf -y install rsync cronie fprintd git iwlwifi-mvm-firmware NetworkManager-wifi
+RUN sudo dnf -y install rsync cronie fprintd fprintd-pam git iwlwifi-mvm-firmware NetworkManager-wifi
 RUN sudo dnf -y remove ffmpeg-free libswresample-free
 RUN sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 RUN sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
