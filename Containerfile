@@ -37,6 +37,7 @@ RUN sudo dnf -y install \
     firefox \
     git \
     vim-enhanced \
+    man-db \
     scrot \
     flatpak 
 RUN sudo dnf -y remove nano-default-editor
