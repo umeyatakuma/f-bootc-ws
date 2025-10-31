@@ -38,7 +38,7 @@ RUN sudo dnf -y install \
     git \
     vim-enhanced \
     man-db \
-    scrot \
+    grim \
     flatpak 
 RUN sudo dnf -y remove nano-default-editor
 
