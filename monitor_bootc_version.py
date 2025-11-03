@@ -62,6 +62,17 @@ def update_version_file(version):
     print(f"Updated {VERSION_FILE} with version: {version}")
 
 
+def send_notification(message):
+    """Send a desktop notification using notify-send."""
+    try:
+        run_command(
+            ["notify-send", "Bootc Version Update", message],
+            check=False  # Don't fail if notify-send is not available
+        )
+    except Exception as e:
+        print(f"Warning: Could not send notification: {e}", file=sys.stderr)
+
+
 def git_commit_and_push(version):
     """Commit and push the version file update."""
     # Add the version file
@@ -97,6 +108,10 @@ def main():
             return 0
 
         print(f"Version changed: {local_version} -> {remote_version}")
+
+        # Send desktop notification
+        notification_message = f"Version changed: {local_version} -> {remote_version}"
+        send_notification(notification_message)
 
         # Update version file
         update_version_file(remote_version)
