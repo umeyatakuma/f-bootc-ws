@@ -11,7 +11,8 @@ from pathlib import Path
 
 
 CONTAINER_IMAGE = "docker://registry.fedoraproject.org/fedora-bootc:latest"
-REPO_DIR = Path.home() / "git" / "f-bootc-ws"
+# Automatically detect the repository directory from the script's location
+REPO_DIR = Path(__file__).resolve().parent
 VERSION_FILE = REPO_DIR / "bootc_version.txt"
 
 

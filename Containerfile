@@ -12,6 +12,7 @@ RUN sudo dnf -y install \
     sway-config-upstream \ 
     waybar \
     dmenu \
+    dunst \
     light \
     pavucontrol \
     playerctl \
