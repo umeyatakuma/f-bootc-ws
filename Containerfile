@@ -20,6 +20,7 @@ RUN sudo dnf -y install \
     gammastep \
     rsync \
     cronie \
+    cups \
     fprintd \
     fprintd-pam \
     iwlwifi-mvm-firmware \
