@@ -88,6 +88,13 @@ def get_remote_version():
         raise ValueError(f"Failed to parse JSON response from Quay.io API: {e}")
 
 
+def get_local_version():
+    """Read the currently stored version from the local file."""
+    if not VERSION_FILE.exists():
+        return None
+    return VERSION_FILE.read_text().strip()
+
+
 def update_version_file(version):
     """Write the new version to the version file."""
     # Create cache directory if it doesn't exist
@@ -102,6 +109,13 @@ def main():
         # Get remote version
         remote_version = get_remote_version()
         print(f"Remote version: {remote_version}")
+
+        # Get local version
+        local_version = get_local_version()
+
+        # Compare versions
+        if remote_version == local_version:
+            return 0
 
         # Update version file
         update_version_file(remote_version)
