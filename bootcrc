@@ -1,32 +1,29 @@
 #!/bin/bash
-# bootc version check - notify user if update is available
+# f-bootc-ws version check - notify user if update is available
 
 # Path to the version file
-VERSION_FILE="$HOME/git/f-bootc-ws/bootc_version.txt"
+VERSION_FILE="$HOME/.cache/f-bootc-ws/f-bootc-ws_version.txt"
 
 # Check if version file exists
 if [[ ! -f "$VERSION_FILE" ]]; then
     return 0
 fi
 
-# Read the upstream version
+# Read the upstream version (SHA256 hash)
 UPSTREAM_VERSION=$(cat "$VERSION_FILE" 2>/dev/null | tr -d '[:space:]')
 if [[ -z "$UPSTREAM_VERSION" ]]; then
     return 0
 fi
 
-# Get current running version from rpm-ostree
-CURRENT_VERSION=$(rpm-ostree status 2>/dev/null | grep -m1 "Version:" | awk '{print $2}')
+# Get current running image digest from bootc status
+CURRENT_DIGEST=$(bootc status --json 2>/dev/null | grep -o '"image-digest":"sha256:[^"]*"' | head -1 | cut -d':' -f3 | cut -d'"' -f1 | cut -c1-12)
 
-# Remove any trailing data after version number (like timestamps)
-CURRENT_VERSION=$(echo "$CURRENT_VERSION" | tr -d '[:space:]')
-
-# If we couldn't get current version, exit silently
-if [[ -z "$CURRENT_VERSION" ]]; then
+# If we couldn't get current digest, exit silently
+if [[ -z "$CURRENT_DIGEST" ]]; then
     return 0
 fi
 
 # Compare versions - if they differ, notify user
-if [[ "$CURRENT_VERSION" != "$UPSTREAM_VERSION" ]]; then
-    echo -e "\e[0;31mNew bootc version ($UPSTREAM_VERSION) available. Run: sudo rpm-ostree update\e[0m"
+if [[ "$CURRENT_DIGEST" != "$UPSTREAM_VERSION" ]]; then
+    echo -e "\e[0;31mNew f-bootc-ws version ($UPSTREAM_VERSION) available. Run: sudo bootc upgrade\e[0m"
 fi
