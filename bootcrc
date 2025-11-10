@@ -2,7 +2,7 @@
 # f-bootc-ws version check - notify user if update is available
 
 # Path to the version file
-VERSION_FILE="$HOME/.cache/f-bootc-ws/f-bootc-ws_version.txt"
+VERSION_FILE="$HOME/.cache/f-bootc-ws/f-bootc-quay-img_version.txt"
 
 # Check if version file exists
 if [[ ! -f "$VERSION_FILE" ]]; then
@@ -15,8 +15,9 @@ if [[ -z "$UPSTREAM_VERSION" ]]; then
     return 0
 fi
 
-# Get current running image digest from bootc status
-CURRENT_DIGEST=$(bootc status --json 2>/dev/null | grep -o '"image-digest":"sha256:[^"]*"' | head -1 | cut -d':' -f3 | cut -d'"' -f1 | cut -c1-12)
+# Get current running image digest from rpm-ostree status
+# Extract the first 12 characters of the SHA256 digest from the booted deployment (marked with ●)
+CURRENT_DIGEST=$(rpm-ostree status 2>/dev/null | awk '/^● /{getline; if(/Digest:/) {match($0, /sha256:([a-f0-9]+)/, arr); print substr(arr[1], 1, 12)}}')
 
 # If we couldn't get current digest, exit silently
 if [[ -z "$CURRENT_DIGEST" ]]; then
@@ -25,5 +26,5 @@ fi
 
 # Compare versions - if they differ, notify user
 if [[ "$CURRENT_DIGEST" != "$UPSTREAM_VERSION" ]]; then
-    echo -e "\e[0;31mNew f-bootc-ws version ($UPSTREAM_VERSION) available. Run: sudo bootc upgrade\e[0m"
+    echo -e "\e[0;31mNew f-bootc-ws version ($UPSTREAM_VERSION) available. Run: sudo rpm-ostree update\e[0m"
 fi

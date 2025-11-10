@@ -20,7 +20,7 @@ QUAY_API_URL = f"https://quay.io/api/v1/repository/{QUAY_REPO_OWNER}/{QUAY_REPO_
 REPO_DIR = Path(__file__).resolve().parent
 # Store version file in cache directory
 CACHE_DIR = Path.home() / ".cache" / "f-bootc-ws"
-VERSION_FILE = CACHE_DIR / "f-bootc-ws_version.txt"
+VERSION_FILE = CACHE_DIR / "f-bootc-quay-img_version.txt"
 
 
 def run_command(cmd, capture_output=True, check=True, cwd=None):
