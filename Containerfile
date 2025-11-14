@@ -21,6 +21,7 @@ RUN sudo dnf -y install \
     rsync \
     cronie \
     cups \
+    sox \
     fprintd \
     fprintd-pam \
     iwlwifi-mvm-firmware \
