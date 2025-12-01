@@ -25,7 +25,6 @@ RUN sudo dnf -y install \
     fprintd \
     fprintd-pam \
     iwlwifi-mvm-firmware \
-    intel-media-driver \
     NetworkManager-wifi \
     langpacks-fonts-ja \
     langpacks-fonts-en \
