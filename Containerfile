@@ -42,7 +42,8 @@ RUN sudo dnf -y install \
     vim-enhanced \
     man-db \
     grim \
-    flatpak 
+    flatpak \
+    fedora-repos-ostree
 RUN sudo dnf -y remove nano-default-editor
 
 RUN sudo dnf -y remove ffmpeg-free libswresample-free
