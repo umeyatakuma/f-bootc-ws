@@ -29,6 +29,7 @@ RUN sudo dnf -y install \
     langpacks-fonts-ja \
     langpacks-fonts-en \
     krb5-workstation \
+    glibc-langpack-en \
     gnome-keyring \ 
     fcitx5 \
     fcitx5-mozc \
