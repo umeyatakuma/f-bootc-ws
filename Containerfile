@@ -31,9 +31,6 @@ RUN sudo dnf -y install \
     krb5-workstation \
     glibc-langpack-en \
     gnome-keyring \ 
-    NetworkManager-openvpn \ 
-    openvpn \ 
-    pkcs11-helper \ 
     fcitx5 \
     fcitx5-mozc \
     fcitx5-configtool \ 
