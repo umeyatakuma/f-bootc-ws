@@ -26,6 +26,9 @@ RUN sudo dnf -y install \
     fprintd-pam \
     iwlwifi-mvm-firmware \
     NetworkManager-wifi \
+    NetworkManager-openvpn \
+    openvpn \
+    pkcs11-helper \
     langpacks-fonts-ja \
     langpacks-fonts-en \
     krb5-workstation \
