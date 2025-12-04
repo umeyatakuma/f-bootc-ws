@@ -57,3 +57,4 @@ RUN sudo dnf -y install \
 RUN sudo dnf -y install ffmpeg
 
 RUN dnf -y clean all
+Run bootc container lint
