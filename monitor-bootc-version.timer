@@ -1,0 +1,14 @@
+[Unit]
+Description=Timer to monitor Fedora bootc container version
+Requires=monitor-bootc-version.service
+
+[Timer]
+# Run every 6 hours
+OnCalendar=*-*-* 00/6:00:00
+# Run 5 minutes after boot if the system was down during a scheduled run
+Persistent=yes
+# Randomize start time by up to 5 minutes to avoid load spikes
+RandomizedDelaySec=5min
+
+[Install]
+WantedBy=timers.target

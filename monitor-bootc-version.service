@@ -1,0 +1,23 @@
+[Unit]
+Description=Monitor Fedora bootc container version
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/tumeya/git/f-bootc-ws
+ExecStart=/usr/bin/python3 /home/tumeya/git/f-bootc-ws/monitor_bootc_version.py
+
+# Run as the user who owns the repository
+User=tumeya
+Group=tumeya
+
+# Environment variables for git operations
+Environment="HOME=/home/tumeya"
+
+# Security hardening (optional)
+PrivateTmp=yes
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target
