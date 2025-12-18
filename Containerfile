@@ -40,6 +40,7 @@ RUN sudo dnf -y install \
     tlp \
     tlp-rdw \
     virt-viewer \
+    waydroid \
     distrobox \
     firefox \
     git \
