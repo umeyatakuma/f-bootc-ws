@@ -42,6 +42,7 @@ RUN sudo dnf -y install \
     virt-viewer \
     qemu-kvm \
     libvirt \
+    virt-manager \
     distrobox \
     firefox \
     git \
