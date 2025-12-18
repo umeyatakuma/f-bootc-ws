@@ -43,6 +43,7 @@ RUN sudo dnf -y install \
     firefox \
     git \
     vim-enhanced \
+    polkit \
     man-db \
     grim \
     flatpak \
