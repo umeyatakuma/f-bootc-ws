@@ -40,7 +40,8 @@ RUN sudo dnf -y install \
     tlp \
     tlp-rdw \
     virt-viewer \
-    waydroid \
+    qemu-kvm \
+    libvirt \
     distrobox \
     firefox \
     git \
