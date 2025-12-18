@@ -39,10 +39,6 @@ RUN sudo dnf -y install \
     fcitx5-configtool \ 
     tlp \
     tlp-rdw \
-    virt-viewer \
-    qemu-kvm \
-    libvirt \
-    virt-manager \
     distrobox \
     firefox \
     git \
@@ -52,6 +48,8 @@ RUN sudo dnf -y install \
     flatpak \
     fedora-repos-ostree
 RUN sudo dnf -y remove nano-default-editor
+
+RUN sudo dnf -y group install virtualization
 
 RUN sudo dnf -y remove ffmpeg-free libswresample-free
 RUN sudo dnf -y install \
