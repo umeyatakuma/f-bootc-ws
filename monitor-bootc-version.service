@@ -14,10 +14,15 @@ Group=tumeya
 
 # Environment variables for git operations
 Environment="HOME=/home/tumeya"
+Environment="GIT_SSH_COMMAND=ssh -i /home/tumeya/.ssh/id_rsa -o IdentitiesOnly=yes -F /home/tumeya/.ssh/config -o StrictHostKeyChecking=accept-new"
+Environment="GIT_AUTHOR_NAME=tumeya"
+Environment="GIT_AUTHOR_EMAIL=umeyatakuma@tutanota.com"
+Environment="GIT_COMMITTER_NAME=tumeya"
+Environment="GIT_COMMITTER_EMAIL=umeyatakuma@tutanota.com"
 
 # Security hardening (optional)
 PrivateTmp=yes
-NoNewPrivileges=yes
+#NoNewPrivileges=yes
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
