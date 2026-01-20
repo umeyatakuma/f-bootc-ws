@@ -27,7 +27,7 @@ RUN sudo dnf -y install \
     iwlwifi-mvm-firmware \
     NetworkManager-wifi \
     NetworkManager-openvpn \
-    firewalld-fileysystem \
+    firewalld-filesystem \
     firewalld \
     openvpn \
     pkcs11-helper \
