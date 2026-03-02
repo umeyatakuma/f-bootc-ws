@@ -24,6 +24,7 @@ RUN sudo dnf -y install \
     sox \
     pipewire-utils \
     qpwgraph \
+    helvum \
     fprintd \
     fprintd-pam \
     iwlwifi-mvm-firmware \
