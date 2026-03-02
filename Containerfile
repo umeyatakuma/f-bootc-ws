@@ -22,6 +22,7 @@ RUN sudo dnf -y install \
     cronie \
     cups \
     sox \
+    pipewire-utils \
     fprintd \
     fprintd-pam \
     iwlwifi-mvm-firmware \
