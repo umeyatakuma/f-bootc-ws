@@ -23,6 +23,7 @@ RUN sudo dnf -y install \
     cups \
     sox \
     pipewire-utils \
+    qpwgraph \
     fprintd \
     fprintd-pam \
     iwlwifi-mvm-firmware \
