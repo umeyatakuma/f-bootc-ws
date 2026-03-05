@@ -48,6 +48,9 @@ RUN sudo dnf -y install \
     firefox \
     git \
     vim-enhanced \
+    google-noto-sans-symbols-2-fonts \
+    google-noto-sans-symbols-fonts \
+    google-noto-sans-symbols-vf-fonts \ 
     polkit \
     man-db \
     grim \
