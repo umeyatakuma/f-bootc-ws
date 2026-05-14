@@ -13,6 +13,7 @@ RUN sudo dnf -y install \
     waybar \
     dmenu \
     dunst \
+    xdg-user-dirs \
     light \
     pavucontrol \
     playerctl \
